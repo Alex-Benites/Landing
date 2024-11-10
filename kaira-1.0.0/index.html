@@ -48,93 +48,6 @@
 
 <body class="homepage">
 
-  <div class="preloader text-white fs-6 text-uppercase overflow-hidden"></div>
-
-  <div class="search-popup">
-    <div class="search-popup-container">
-
-      <form role="search" method="get" class="form-group" action="">
-        <input type="search" id="search-form" class="form-control border-0 border-bottom"
-          placeholder="Type and press enter" value="" name="s" />
-        <button type="submit" class="search-submit border-0 position-absolute bg-white"
-          style="top: 15px;right: 15px;"><svg class="search" width="24" height="24">
-            <use xlink:href="#search"></use>
-          </svg></button>
-      </form>
-
-      <h5 class="cat-list-title">Browse Categories</h5>
-
-      <ul class="cat-list">
-        <li class="cat-list-item">
-          <a href="#" title="Jackets">Jackets</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="T-shirts">T-shirts</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Handbags">Handbags</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Accessories">Accessories</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Cosmetics">Cosmetics</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Dresses">Dresses</a>
-        </li>
-        <li class="cat-list-item">
-          <a href="#" title="Jumpsuits">Jumpsuits</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasCart" aria-labelledby="My Cart">
-    <div class="offcanvas-header justify-content-center">
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Growers cider</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Fresh grapes</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$8</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Heinz tomato ketchup</h6>
-              <small class="text-body-secondary">Brief description</small>
-            </div>
-            <span class="text-body-secondary">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
-
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to Checkout</button>
-      </div>
-    </div>
-  </div>
-
-  
-
   <!--------------------------------------- Navbar Start ----------------------------------------------------->
   <nav class="navbar navbar-expand-lg bg-secondary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
     <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
@@ -547,14 +460,15 @@
         </div>
     </div>
 </div>
-<!-- Team End -->
+
+<!--------------------------------------- Seccion de fondo de la Barberia ---------------------------------- -->
 
   <section class="video py-5 overflow-hidden">
     <div class="container-fluid">
       <div class="row">
         <div class="video-content open-up" data-aos="zoom-out">
           <div class="video-bg">
-            <img src="images/video-image.jpg" alt="video" class="video-image img-fluid">
+            <img src="images/localBarber.jpg" alt="video" class="video-image img-fluid">
           </div>
           <div class="video-player">
             <a class="youtube" href="https://www.youtube.com/embed/pjtsGzQjFM4">
@@ -569,6 +483,52 @@
     </div>
   </section>
 
+<!-- ---------------------------------- Seccion Horarios ---------------------------- -->
+<section class="container-xxl py-5">
+  <div class="container">
+      <div class="row g-0">
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <div class="h-100">
+                  <img class="img-fluid h-100" src="images/open.jpg" alt="">
+              </div>
+          </div>
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <div class="bg-secondary h-100 d-flex flex-column justify-content-center p-5">
+                  <p class="d-inline-flex bg-dark text-primary py-1 px-4 me-auto">ATENCION AL PUBLICO</p>
+                  <h1 class="text-uppercase mb-4">Visitanos en nuestros siguientes horarios!</h1>
+                  <div>
+                      <div class="d-flex justify-content-between border-bottom py-2">
+                          <h6 class="text-uppercase mb-0">Lunes</h6>
+                          <span class="text-uppercase">09 AM - 09 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between border-bottom py-2">
+                          <h6 class="text-uppercase mb-0">Martes</h6>
+                          <span class="text-uppercase">09 AM - 09 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between border-bottom py-2">
+                          <h6 class="text-uppercase mb-0">Miercoles</h6>
+                          <span class="text-uppercase">09 AM - 09 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between border-bottom py-2">
+                          <h6 class="text-uppercase mb-0">Jueves</h6>
+                          <span class="text-uppercase">09 AM - 09 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between border-bottom py-2">
+                          <h6 class="text-uppercase mb-0">Viernes</h6>
+                          <span class="text-uppercase">09 AM - 09 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between py-2">
+                          <h6 class="text-uppercase mb-0">Sabados/Domingos</h6>
+                          <span class="text-uppercase text-primary">Cerrado</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!--
   <section class="testimonials py-5 bg-light">
     <div class="section-header text-center mt-5">
       <h3 class="section-title">WE LOVE GOOD COMPLIMENT</h3>
@@ -612,11 +572,15 @@
     <div class="testimonial-swiper-pagination d-flex justify-content-center mb-5"></div>
   </section>
 
+-->
+
+<!-- --------------------------------- Seccion Servicios -------------------------------->
+
   <section id="related-products" class="related-products product-carousel py-5 position-relative overflow-hidden">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-        <h4 class="text-uppercase">You May Also Like</h4>
-        <a href="index.html" class="btn-link">View All Products</a>
+        <h4 class="text-uppercase">Services</h4>
+        <a href="index.html" class="btn-link">View All Services</a>
       </div>
       <div class="swiper product-swiper open-up" data-aos="zoom-out">
         <div class="swiper-wrapper d-flex">
@@ -624,7 +588,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/product-item-5.jpg" alt="product" class="product-image img-fluid">
+                  <img src="images/servicioHaircut.jpg" alt="product" class="product-image img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -633,9 +597,9 @@
                 </a>
                 <div class="product-content">
                   <h5 class="text-uppercase fs-5 mt-3">
-                    <a href="index.html">Dark florish onepiece</a>
+                    <a href="index.html">Corte de Cabello</a>
                   </h5>
-                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$95.00</span></a>
+                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$25.00</span></a>
                 </div>
               </div>
             </div>
@@ -644,7 +608,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/product-item-6.jpg" alt="product" class="product-image img-fluid">
+                  <img src="images/servicioBarba.jpg" alt="product" class="product-image img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -653,9 +617,9 @@
                 </a>
                 <div class="product-content">
                   <h5 class="text-uppercase fs-5 mt-3">
-                    <a href="index.html">Baggy Shirt</a>
+                    <a href="index.html">Corte de Barba</a>
                   </h5>
-                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$55.00</span></a>
+                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$15.00</span></a>
                 </div>
               </div>
             </div>
@@ -664,7 +628,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/product-item-7.jpg" alt="product" class="product-image img-fluid">
+                  <img src="images/servicioTinturado.jpg" alt="product" class="product-image img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -673,7 +637,7 @@
                 </a>
                 <div class="product-content">
                   <h5 class="text-uppercase fs-5 mt-3">
-                    <a href="index.html">Cotton off-white shirt</a>
+                    <a href="index.html">Tinturados</a>
                   </h5>
                   <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$65.00</span></a>
                 </div>
@@ -684,7 +648,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/product-item-8.jpg" alt="product" class="product-image img-fluid">
+                  <img src="images/servicioBigote.jpg" alt="product" class="product-image img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -693,9 +657,9 @@
                 </a>
                 <div class="product-content">
                   <h5 class="text-uppercase fs-5 mt-3">
-                    <a href="index.html">Handmade crop sweater</a>
+                    <a href="index.html">Bigote</a>
                   </h5>
-                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$50.00</span></a>
+                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$10.00</span></a>
                 </div>
               </div>
             </div>
@@ -704,7 +668,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/product-item-1.jpg" alt="product" class="product-image img-fluid">
+                  <img src="images/servicioTrenzas.jpg" alt="product" class="product-image img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -713,7 +677,7 @@
                 </a>
                 <div class="product-content">
                   <h5 class="text-uppercase fs-5 mt-3">
-                    <a href="index.html">Handmade crop sweater</a>
+                    <a href="index.html">Peinados y Trenzas</a>
                   </h5>
                   <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
                 </div>
@@ -732,10 +696,11 @@
     </div>
   </section>
 
+<!------------------------------------------- Seccion patrocinadores -------------------------------------->
   <section class="blog py-5">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-        <h4 class="text-uppercase">Read Blog Posts</h4>
+        <h4 class="text-uppercase">Contamos con las mejores Marcas</h4>
         <a href="index.html" class="btn-link">View All</a>
       </div>
       <div class="row">
@@ -743,18 +708,22 @@
           <article class="post-item">
             <div class="post-image">
               <a href="index.html">
-                <img src="images/post-image1.jpg" alt="image" class="post-grid-image img-fluid">
+                <img src="images/marcaCrew.jpg" alt="image" class="post-grid-image img-fluid">
               </a>
             </div>
             <div class="post-content d-flex flex-wrap gap-2 my-3">
+
+              <!--
               <div class="post-meta text-uppercase fs-6 text-secondary">
                 <span class="post-category">Fashion /</span>
                 <span class="meta-day"> jul 11, 2022</span>
               </div>
+              -->
+
               <h5 class="post-title text-uppercase">
-                <a href="index.html">How to look outstanding in pastel</a>
+                <a href="index.html">AMERICAN CREW</a>
               </h5>
-              <p>Dignissim lacus,turpis ut suspendisse vel tellus.Turpis purus,gravida orci,fringilla...</p>
+              <p>Marca icónica en productos de cuidado masculino, ofreciendo pomadas, ceras y champús de alta calidad</p>
             </div>
           </article>
         </div>
@@ -762,18 +731,22 @@
           <article class="post-item">
             <div class="post-image">
               <a href="index.html">
-                <img src="images/post-image2.jpg" alt="image" class="post-grid-image img-fluid">
+                <img src="images/marcaReuzel.jpg" alt="image" class="post-grid-image img-fluid">
               </a>
             </div>
             <div class="post-content d-flex flex-wrap gap-2 my-3">
+              
+              <!--
               <div class="post-meta text-uppercase fs-6 text-secondary">
                 <span class="post-category">Fashion /</span>
                 <span class="meta-day"> jul 11, 2022</span>
               </div>
+              -->
+              
               <h5 class="post-title text-uppercase">
-                <a href="index.html">Top 10 fashion trend for summer</a>
+                <a href="index.html">REUZEL</a>
               </h5>
-              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+              <p>Especialista en pomadas y productos para cabello y barba, reconocida por su estilo clásico y fijación duradera</p>
             </div>
           </article>
         </div>
@@ -781,18 +754,22 @@
           <article class="post-item">
             <div class="post-image">
               <a href="index.html">
-                <img src="images/post-image3.jpg" alt="image" class="post-grid-image img-fluid">
+                <img src="images/marcaWhal.jpg" alt="image" class="post-grid-image img-fluid">
               </a>
             </div>
             <div class="post-content d-flex flex-wrap gap-2 my-3">
+
+              <!--
               <div class="post-meta text-uppercase fs-6 text-secondary">
                 <span class="post-category">Fashion /</span>
                 <span class="meta-day"> jul 11, 2022</span>
               </div>
+              -->
+
               <h5 class="post-title text-uppercase">
-                <a href="index.html">Crazy fashion with unique moment</a>
+                <a href="index.html">WHAL</a>
               </h5>
-              <p>Turpis purus, gravida orci, fringilla dignissim lacus, turpis ut suspendisse vel tellus...</p>
+              <p>Líder mundial en máquinas de corte y herramientas de precisión, ideal para un estilo impecable y profesional</p>
             </div>
           </article>
         </div>
@@ -804,11 +781,11 @@
     <div class="container">
       <div class="row">
         <div class="logo-content d-flex flex-wrap justify-content-between">
-          <img src="images/logo1.png" alt="logo" class="logo-image img-fluid">
-          <img src="images/logo2.png" alt="logo" class="logo-image img-fluid">
-          <img src="images/logo3.png" alt="logo" class="logo-image img-fluid">
-          <img src="images/logo4.png" alt="logo" class="logo-image img-fluid">
-          <img src="images/logo5.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logoAmercian.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logoObssesion.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logoReuzel.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logoWahl.png" alt="logo" class="logo-image img-fluid">
+          <img src="images/logoUppercut.png" alt="logo" class="logo-image img-fluid">
         </div>
       </div>
     </div>
@@ -821,6 +798,9 @@
           <div class="subscribe-header text-center pb-3">
             <h3 class="section-title text-uppercase">Sign Up for our newsletter</h3>
           </div>
+
+          <!-- Pilas el cambiooo aquiii-->
+
           <form id="form" class="d-flex flex-wrap gap-2">
             <input id ="form_name" type="text" name="email" 
                   placeholder="Your Email Addresss" 
@@ -849,6 +829,8 @@
       </div>
     </div>
   </section>
+
+  <!-- --------------------------- Seccion de Paginas de Instagram -------------------------------- -->
 
   <section class="instagram position-relative">
     <div class="d-flex justify-content-center w-100 position-absolute bottom-0 z-1">
@@ -902,7 +884,7 @@
 
 
 
-  <!-- Footer Start -->
+  <!-- ----------------------------------- Seccion del Footer ---------------------------------------->
   <div class="container-fluid bg-secondary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
         <div class="row g-5">
@@ -936,10 +918,10 @@
                 <a class="btn btn-link" href="">Support</a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <h4 class="text-uppercase mb-4">Newsletter</h4>
+                <h4 class="text-uppercase mb-4"> Sign Up for our Newsletter</h4>
                 <div class="position-relative mb-4">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    <input id= "footer_email" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email Address">
+                    <button id = "footer_signup" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                 </div>
                 <div class="d-flex pt-1 m-n1">
                     <a class="btn btn-lg-square btn-dark text-primary m-1" href=""><i class="fab fa-twitter"></i></a>
@@ -960,9 +942,7 @@
         </div>
     </div>
 </div>
-<!-- Footer End -->
 
-<!-- Back to Top -->
 <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
