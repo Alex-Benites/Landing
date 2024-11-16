@@ -1,7 +1,4 @@
-// URL de tu API (ajusta esta URL según tu servidor)
-const apiUrl = 'http://localhost:3000/api/styles'; // Cambia esta URL si es diferente
-
-// Función para cargar las imágenes desde la API
+const apiUrl = 'http://localhost:3000/api/styles'; 
 const loadGallery = async () => {
   try {
     const response = await fetch(apiUrl);
@@ -10,19 +7,12 @@ const loadGallery = async () => {
     }
 
     const styles = await response.json();
-    console.log(styles); // Suponemos que la respuesta es un arreglo de objetos
-
-    // Acceder al contenedor de la galería
+    console.log(styles);
     const galleryContainer = document.getElementById('gallery-container');
-
-    // Limpiar cualquier contenido previo
     galleryContainer.innerHTML = '';
 
-    // Iterar sobre los estilos y agregar las imágenes a la galería
     styles.forEach(style => {
-      const { name, image } = style; // Desestructuración para obtener nombre e imagen
-
-      // Crear el elemento HTML para cada imagen
+      const { name, image } = style; 
       const galleryItem = document.createElement('div');
       galleryItem.classList.add('col-md-4', 'mb-4');
 
@@ -34,8 +24,6 @@ const loadGallery = async () => {
           </div>
         </div>
       `;
-
-      // Insertar el nuevo elemento en el contenedor de la galería
       galleryContainer.appendChild(galleryItem);
     });
   } catch (error) {
@@ -43,5 +31,4 @@ const loadGallery = async () => {
   }
 };
 
-// Llamamos a la función para cargar la galería cuando la página esté lista
 document.addEventListener('DOMContentLoaded', loadGallery);
