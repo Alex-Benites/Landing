@@ -162,3 +162,8 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+#container-gallery img {
+  border-radius: 20px; /* Ajusta el valor según tus preferencias */
+  border: 2px solid rgb(21, 248, 43); /* Borde negro */
+}

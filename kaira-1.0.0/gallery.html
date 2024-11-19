@@ -16,12 +16,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/vendor.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/kaira-1.0.0/css/stylemain.css">
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Oswald:wght@600&display=swap" rel="stylesheet">
+  
+  
+
+   <!------------------------------ Borrar esto de aquii  --------------------- -->
+  <link href="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js" rel="firebase">
+  <link href="https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js" rel="firebase-storage">
+
 
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon">
@@ -94,13 +101,13 @@
     </div>
 
     <!-------------------------------------- Seccion de imagenes dadas por mi API ------------------------------------------>
-    <section id="gallery-section" class="container my-5">
+    <section id="gallery-section" >
         <div class="text-center mb-4">
           <h2 class="text-uppercase">Gallery Styles</h2>
           <p class="text-muted">Descubre nuestros estilos más recientes</p>
         </div>
-        <div id="gallery-container" class="row">
-          <!-- Las imágenes se insertarán aquí -->
+        <div id="container-gallery" class="row">
+          
         </div>
     </section>
 
@@ -182,7 +189,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/script.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/apis.js"></script>
+    <script type="module" src="js/apis.js"></script>
 
 </body>
 

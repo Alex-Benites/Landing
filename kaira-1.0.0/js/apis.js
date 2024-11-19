@@ -47,49 +47,45 @@ document.addEventListener('DOMContentLoaded', loadGallery);
 */
 
 
+
+//import { initializeApp } from "firebase/app";
+//import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js";
 
-// Configuración de Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyCp8DfYJV8JFACQJnjIubbelf1h4yqmD5Q",
-    authDomain: "chillcraze.firebaseapp.com",
-    projectId: "chillcraze",
-    storageBucket: "chillcraze.appspot.com",
-    messagingSenderId: "492166652243",
-    appId: "1:492166652243:web:dcdba9a0a7325c988101a6"
+  apiKey: "AIzaSyCqC1Jms0s3csYBphtx0m-u1PcR3biCgy4",
+  authDomain: "landing-180e0.firebaseapp.com",
+  databaseURL: "https://landing-180e0-default-rtdb.firebaseio.com",
+  projectId: "landing-180e0",
+  storageBucket: "landing-180e0.firebasestorage.app",
+  messagingSenderId: "800539377625",
+  appId: "1:800539377625:web:c7745c5ae7a69ec6e263c8",
+  measurementId: "G-VWQQBMHLVG"
 };
 
-// Inicializa la app y el almacenamiento
 const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
+const hairstyleRef = ref(storage, 'Hairstyle/');
 
-// Referencia al contenedor donde se cargarán las imágenes
-const galleryContainer = document.getElementById("gallery-container");
 
-// Función para cargar imágenes
-async function loadImages() {
-    try {
-      const imagesRef = ref(storage, 'images/');
-      const response = await listAll(imagesRef);
-      console.log("Imágenes encontradas:", response);
-  
-      response.items.forEach(async (item) => {
-        const url = await getDownloadURL(item);
-        console.log("URL de la imagen:", url);
-  
-        // Genera la imagen dinámica
-        const col = document.createElement("div");
-        col.className = "col-lg-4 col-md-6 mb-4";
-        const img = document.createElement("img");
-        img.src = url;
-        img.className = "img-fluid rounded shadow";
-        col.appendChild(img);
-        galleryContainer.appendChild(col);
-      });
-    } catch (error) {
-      console.error("Error cargando imágenes:", error);
-    }
+const loadImages = async () => {
+  try {
+    const res = await listAll(hairstyleRef);
+    const galleryContainer = document.getElementById("container-gallery");
+
+    res.items.forEach(async (itemRef) => {
+      const url = await getDownloadURL(itemRef);
+      const imgElement = document.createElement("img");
+      imgElement.src = url;  
+      imgElement.alt = itemRef.name; 
+      imgElement.classList.add("col-12", "col-md-4", "mb-4");
+      galleryContainer.appendChild(imgElement);
+    });
+  } catch (error) {
+    console.error("Error al cargar las imágenes:", error);
   }
+};
 
-document.addEventListener("DOMContentLoaded", loadImages);
+document.addEventListener('DOMContentLoaded', loadImages);
