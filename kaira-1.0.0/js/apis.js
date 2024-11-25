@@ -1,56 +1,3 @@
-/*
-
-// Tu clave de API de Unsplash
-const apiKey = 'j2L6_LXOBWR5cIXS_SrExgreO4-XO7tr9dZj67br0u8';  // Aquí va tu clave API
-const apiUrl = `https://api.unsplash.com/search/photos?query=hairstyle&client_id=${apiKey}&per_page=9`;
-
-// Función para cargar la galería de imágenes
-const loadGallery = async () => {
-  try {
-    // Realizamos la solicitud a la API de Unsplash
-    const response = await fetch(apiUrl);
-    if (!response.ok) {
-      alert('No se pudieron cargar las imágenes');
-      return;
-    }
-    const data = await response.json();
-    const images = data.results;
-
-    // Recorrer las imágenes obtenidas de la API
-    images.forEach((image) => {
-      const imageUrl = image.urls.small;  // URL de la imagen
-      const altText = image.alt_description || 'Hairstyle';  // Descripción alternativa de la imagen
-
-      // Crear el HTML para cada imagen
-      const template = `
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="${imageUrl}" class="card-img-top" alt="${altText}">
-            <div class="card-body">
-              <h5 class="card-title">${altText}</h5>
-            </div>
-          </div>
-        </div>
-      `;
-
-      // Agregar la imagen al contenedor de la galería
-      document.getElementById('gallery-container').innerHTML += template;
-    });
-  } catch (error) {
-    alert('Hubo un error al cargar las imágenes');
-    console.error('Error:', error);
-  }
-};
-
-// Ejecutamos la función cuando la página esté completamente cargada
-document.addEventListener('DOMContentLoaded', loadGallery);
-*/
-
-
-
-//import { initializeApp } from "firebase/app";
-//import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js";
 
@@ -69,7 +16,6 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 const hairstyleRef = ref(storage, 'Hairstyle/');
 
-
 const loadImages = async () => {
   try {
     const res = await listAll(hairstyleRef);
@@ -77,11 +23,45 @@ const loadImages = async () => {
 
     res.items.forEach(async (itemRef) => {
       const url = await getDownloadURL(itemRef);
+
+      // Extrae el nombre del archivo sin la extensión
+      const fileName = itemRef.name.split('.')[0]; // Obtiene el nombre del archivo sin la extensión
+
+      // Crea el contenedor de la tarjeta (flip)
+      const card = document.createElement("div");
+      card.classList.add("flip-card", "col-12", "col-md-4", "mb-4"); // Aquí aseguramos que las clases sean las correctas para el diseño
+
+      // Contenedor para el flip
+      const cardInner = document.createElement("div");
+      cardInner.classList.add("flip-card-inner");
+
+      // Parte delantera de la tarjeta con la imagen
+      const cardFront = document.createElement("div");
+      cardFront.classList.add("flip-card-front");
+
+      // Imagen en la parte delantera
       const imgElement = document.createElement("img");
-      imgElement.src = url;  
-      imgElement.alt = itemRef.name; 
-      imgElement.classList.add("col-12", "col-md-4", "mb-4");
-      galleryContainer.appendChild(imgElement);
+      imgElement.src = url;
+      imgElement.alt = fileName; // Usamos el nombre del archivo sin la extensión
+      imgElement.classList.add("gallery-image"); // Aplicamos la clase que ya tiene estilos definidos
+      cardFront.appendChild(imgElement);
+
+      // Parte trasera de la tarjeta (con el nombre del corte)
+      const cardBack = document.createElement("div");
+      cardBack.classList.add("flip-card-back");
+
+      // Agregar el nombre del corte en la parte trasera
+      const nameElement = document.createElement("h4");
+      nameElement.textContent = fileName; // Usamos solo el nombre del archivo
+      cardBack.appendChild(nameElement);
+
+      // Agregar las partes (frontal y trasera) al contenedor interno de la tarjeta
+      cardInner.appendChild(cardFront);
+      cardInner.appendChild(cardBack);
+
+      // Finalmente, agregar el contenedor de la tarjeta al contenedor de la galería
+      card.appendChild(cardInner);
+      galleryContainer.appendChild(card);
     });
   } catch (error) {
     console.error("Error al cargar las imágenes:", error);

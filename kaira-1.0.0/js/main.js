@@ -100,7 +100,7 @@ let getData = async () => {
 // Función de inicialización que se ejecuta al cargar la página
 let ready = () => {
   console.log("DOM está listo");
-  getData(); // Recuperar los datos al cargar la página
+  getData(); 
 };
 
 // Función para añadir los eventos al botón de SignUp en el footer
