@@ -2,5 +2,11 @@
   "dependencies": {
     "express": "^4.21.1",
     "firebase": "^11.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  },
+  "scripts": {
+  "deploy": "gh-pages -d ."
   }
 }
