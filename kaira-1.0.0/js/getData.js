@@ -1,7 +1,5 @@
-// URL de la base de datos de Firebase
 const databaseURL = "https://landing-180e0-default-rtdb.firebaseio.com/coleccion.json";
 
-// Función para obtener y mostrar los datos desde Firebase
 let getData = async () => {
   try {
     const response = await fetch(databaseURL, { method: "GET" });
@@ -21,7 +19,7 @@ let getData = async () => {
       if (countSuscribers.size > 0) {
         let index = 1;
         const subscribersElement = document.getElementById("subscribers");
-        subscribersElement.innerHTML = ""; // Limpiar contenido anterior
+        subscribersElement.innerHTML = ""; 
         for (let [date, count] of countSuscribers) {
           let rowTemplate = `
             <tr>
@@ -39,7 +37,6 @@ let getData = async () => {
   }
 };
 
-// Evento para iniciar al cargar la página
 let ready = () => {
   console.log("DOM está listo");
   getData(); 

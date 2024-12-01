@@ -1,7 +1,5 @@
-// URL de la base de datos de Firebase
 const databaseURL = "https://landing-180e0-default-rtdb.firebaseio.com/coleccion.json";
 
-// Función para enviar los datos al servidor
 let sendDataFooter = () => {
   const emailElement = document.getElementById("footer_email");
   const emailText = emailElement.value;
@@ -54,11 +52,9 @@ let sendDataFooter = () => {
     });
 };
 
-// Evento para añadir al botón de SignUp
 let loaded = (_eventLoaded) => {
   const signupButton = document.getElementById("footer_signup");
   signupButton.addEventListener("click", sendDataFooter);
 };
 
-// Evento de carga
 window.addEventListener("load", loaded);

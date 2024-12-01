@@ -1,12 +1,9 @@
-// URL de la base de datos de Firebase
 const databaseURL = "https://landing-180e0-default-rtdb.firebaseio.com/coleccion.json";
 
-// Función para enviar los datos al servidor
 let sendDataFooter = () => {
-  const emailElement = document.getElementById("footer_email"); // Input de email en el footer
+  const emailElement = document.getElementById("footer_email"); 
   const emailText = emailElement.value;
 
-  // Verifica si el campo de correo está vacío
   if (emailText.length === 0) {
     emailElement.animate(
       [
@@ -24,7 +21,7 @@ let sendDataFooter = () => {
     return;
   }
 
-  // Preparar los datos para Firebase
+
   const data = {
     email: emailText,
     saved: new Date().toLocaleString("es-CO", {
@@ -32,7 +29,6 @@ let sendDataFooter = () => {
     }),
   };
 
-  // Enviar los datos a Firebase
   fetch(databaseURL, {
     method: "POST",
     headers: {
@@ -47,18 +43,17 @@ let sendDataFooter = () => {
       return response.json();
     })
     .then((_result) => {
-      alert("Gracias por suscribirte, ¡te mantendremos actualizado!"); // Mensaje de éxito
+      alert("Gracias por suscribirte, ¡te mantendremos actualizado!"); 
       emailElement.value = "";
       emailElement.placeholder = "Your email Address";
       emailElement.focus();
-      getData(); // Llamada para actualizar la tabla de suscriptores
+      getData(); 
     })
     .catch((_error) => {
-      alert("Hubo un error al procesar tu solicitud. ¡Vuelve pronto!"); // Mensaje de error
+      alert("Hubo un error al procesar tu solicitud. ¡Vuelve pronto!");
     });
 };
 
-// Función para obtener y mostrar los suscriptores desde Firebase
 let getData = async () => {
   try {
     const response = await fetch(databaseURL, { method: "GET" });
@@ -75,11 +70,11 @@ let getData = async () => {
         countSuscribers.set(date, count + 1);
       }
 
-      // Actualiza la tabla con los nuevos datos
+      
       if (countSuscribers.size > 0) {
         let index = 1;
         const subscribersElement = document.getElementById("subscribers");
-        subscribersElement.innerHTML = ""; // Limpiar contenido anterior
+        subscribersElement.innerHTML = ""; 
         for (let [date, count] of countSuscribers) {
           let rowTemplate = `
             <tr>
@@ -97,19 +92,17 @@ let getData = async () => {
   }
 };
 
-// Función de inicialización que se ejecuta al cargar la página
+
 let ready = () => {
   console.log("DOM está listo");
   getData(); 
 };
 
-// Función para añadir los eventos al botón de SignUp en el footer
 let loaded = (_eventLoaded) => {
   const signupButton = document.getElementById("footer_signup");
-  signupButton.addEventListener("click", sendDataFooter); // Enviar datos al hacer clic
+  signupButton.addEventListener("click", sendDataFooter); 
 };
 
-// Eventos de carga
 window.addEventListener("DOMContentLoaded", ready);
 window.addEventListener("load", loaded);
 

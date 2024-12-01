@@ -23,43 +23,30 @@ const loadImages = async () => {
 
     res.items.forEach(async (itemRef) => {
       const url = await getDownloadURL(itemRef);
-
-      // Extrae el nombre del archivo sin la extensión
-      const fileName = itemRef.name.split('.')[0]; // Obtiene el nombre del archivo sin la extensión
-
-      // Crea el contenedor de la tarjeta (flip)
+      const fileName = itemRef.name.split('.')[0]; 
       const card = document.createElement("div");
-      card.classList.add("flip-card", "col-12", "col-md-4", "mb-4"); // Aquí aseguramos que las clases sean las correctas para el diseño
+      card.classList.add("flip-card", "col-12", "col-md-4", "mb-4"); 
 
-      // Contenedor para el flip
       const cardInner = document.createElement("div");
       cardInner.classList.add("flip-card-inner");
-
-      // Parte delantera de la tarjeta con la imagen
       const cardFront = document.createElement("div");
       cardFront.classList.add("flip-card-front");
-
-      // Imagen en la parte delantera
       const imgElement = document.createElement("img");
       imgElement.src = url;
-      imgElement.alt = fileName; // Usamos el nombre del archivo sin la extensión
-      imgElement.classList.add("gallery-image"); // Aplicamos la clase que ya tiene estilos definidos
+      imgElement.alt = fileName; 
+      imgElement.classList.add("gallery-image"); 
       cardFront.appendChild(imgElement);
 
-      // Parte trasera de la tarjeta (con el nombre del corte)
+      
       const cardBack = document.createElement("div");
       cardBack.classList.add("flip-card-back");
-
-      // Agregar el nombre del corte en la parte trasera
       const nameElement = document.createElement("h4");
-      nameElement.textContent = fileName; // Usamos solo el nombre del archivo
+      nameElement.textContent = fileName; 
       cardBack.appendChild(nameElement);
-
-      // Agregar las partes (frontal y trasera) al contenedor interno de la tarjeta
       cardInner.appendChild(cardFront);
       cardInner.appendChild(cardBack);
 
-      // Finalmente, agregar el contenedor de la tarjeta al contenedor de la galería
+      
       card.appendChild(cardInner);
       galleryContainer.appendChild(card);
     });
@@ -69,3 +56,4 @@ const loadImages = async () => {
 };
 
 document.addEventListener('DOMContentLoaded', loadImages);
+

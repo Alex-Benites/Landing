@@ -205,6 +205,7 @@
   align-items: center;
 }
 
+
 .flip-card-back {
   background-color: #333;
   color: white;
@@ -227,3 +228,30 @@
   border-radius: 15px; 
 }
 
+/*----------------------- Seccion soporte tecnico-----------------------*/
+.card {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+}
+
+.card-header {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+}
+
+/*----------------------- Ventana emergente del soporte tecnico-----------------------*/
+.toast {
+  background-color: #28a745; /* Cambia el color según tu preferencia */
+  color: white;
+  border-radius: 5px;
+}
+
+#toast-container {
+  top: 50px; 
+  right: 20px; 
+}
